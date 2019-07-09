@@ -7,7 +7,6 @@ public class Test2 {
 	
 	/*
 	 * What will happen if these two methods are called by different threads?
-	 * 
 	 * R: Will wait for ever to get synchronized 
 	 * 
 	 */
