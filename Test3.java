@@ -16,21 +16,30 @@ public class EmailAccount {
 	private boolean use2FA = false;
     private static final Logger LOGGER = Logger.getLogger(EmailAccount.class.getName());
 
-
-	public EmailAccount(final String user, final String n) {
+	public EmailAccount(final String user, final String n) throws Exception {
 		if (checkServer()) {
 			this.uuid = UUID.randomUUID();
 			this.username = user;
 			this.name = n;
 			LOGGER.info("Email Account for " + n + "created");
+		} else {
+			LOGGER.severe("Error creating Email account for "+n);
 		}
 	}
 
 	private boolean checkServer() {
-		boolean result = false;
+		// boolean result = false;
+		boolean result = true;
+
 		// Check Mailbox server is online
 		// Open Connection to Mailbox server
 		// Check available space for new mailbox creation
+
+		// R: If this is a simulation, it will never create email account
+		// with constructor, if that's the desired behaviour
+		// we need to simulate either true for successful connection
+		// or do some error handling
+
 		return result;
 	}
 
